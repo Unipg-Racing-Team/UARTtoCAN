@@ -1,22 +1,22 @@
-/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file    can.c
-  * @brief   This file provides code for the configuration
-  *          of the CAN instances.
+  * File Name          : CAN.c
+  * Description        : This file provides code for the configuration
+  *                      of the CAN instances.
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * All rights reserved.</center></h2>
   *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
   */
-/* USER CODE END Header */
+
 /* Includes ------------------------------------------------------------------*/
 #include "can.h"
 
@@ -30,13 +30,6 @@ CAN_HandleTypeDef hcan1;
 void MX_CAN1_Init(void)
 {
 
-  /* USER CODE BEGIN CAN1_Init 0 */
-
-  /* USER CODE END CAN1_Init 0 */
-
-  /* USER CODE BEGIN CAN1_Init 1 */
-
-  /* USER CODE END CAN1_Init 1 */
   hcan1.Instance = CAN1;
   hcan1.Init.Prescaler = 4;
   hcan1.Init.Mode = CAN_MODE_NORMAL;
@@ -53,9 +46,6 @@ void MX_CAN1_Init(void)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN CAN1_Init 2 */
-
-  /* USER CODE END CAN1_Init 2 */
 
 }
 
@@ -70,18 +60,18 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
   /* USER CODE END CAN1_MspInit 0 */
     /* CAN1 clock enable */
     __HAL_RCC_CAN1_CLK_ENABLE();
-
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    /**CAN1 GPIO Configuration
-    PA11     ------> CAN1_RX
-    PA12     ------> CAN1_TX
+  
+    __HAL_RCC_GPIOB_CLK_ENABLE();
+    /**CAN1 GPIO Configuration    
+    PB8     ------> CAN1_RX
+    PB9     ------> CAN1_TX 
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_12;
+    GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF9_CAN1;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     /* CAN1 interrupt Init */
     HAL_NVIC_SetPriority(CAN1_RX0_IRQn, 0, 0);
@@ -104,12 +94,12 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
   /* USER CODE END CAN1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_CAN1_CLK_DISABLE();
-
-    /**CAN1 GPIO Configuration
-    PA11     ------> CAN1_RX
-    PA12     ------> CAN1_TX
+  
+    /**CAN1 GPIO Configuration    
+    PB8     ------> CAN1_RX
+    PB9     ------> CAN1_TX 
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_11|GPIO_PIN_12);
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_8|GPIO_PIN_9);
 
     /* CAN1 interrupt Deinit */
     HAL_NVIC_DisableIRQ(CAN1_RX0_IRQn);
@@ -118,8 +108,10 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 
   /* USER CODE END CAN1_MspDeInit 1 */
   }
-}
+} 
 
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

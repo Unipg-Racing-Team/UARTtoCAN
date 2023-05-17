@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -24,7 +24,7 @@
 
 #ifdef __cplusplus
  extern "C" {
-#endif
+#endif 
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -59,7 +59,7 @@ void SysTick_Handler(void);
 void DMA1_Stream1_IRQHandler(void);
 void CAN1_RX0_IRQHandler(void);
 void CAN1_RX1_IRQHandler(void);
-void USART3_IRQHandler(void);
+void USART1_IRQHandler(void);
 void DMA2_Stream7_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
@@ -70,3 +70,5 @@ void DMA2_Stream7_IRQHandler(void);
 #endif
 
 #endif /* __STM32F4xx_IT_H */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

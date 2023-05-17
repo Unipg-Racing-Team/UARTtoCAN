@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2020 STMicroelectronics.
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
   * All rights reserved.</center></h2>
   *
   * This software component is licensed by ST under BSD 3-Clause license,
@@ -58,7 +58,12 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-
+#define GPS_TX_Pin GPIO_PIN_10
+#define GPS_TX_GPIO_Port GPIOB
+#define GPS_RX_Pin GPIO_PIN_11
+#define GPS_RX_GPIO_Port GPIOB
+#define led_Pin GPIO_PIN_12
+#define led_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
@@ -68,3 +73,5 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -19,13 +19,10 @@ typedef struct{
 	uint8_t headerIndex;
 }block_10Hz;
 
-/*Prepare Data to send to RPI*/
 void codeData10Hz(block_10Hz *block){
-	/*Every block starts with 0x02 and ends with 0x03*/
 	block->coded_data[0]=0x02;
 	block->coded_data[1]=block->headerIndex;
 	for (uint16_t i=0; i<sizeof(block->decoded_data)/3; i++){
-		/*Every byte starts with 01 and all the data gets shifted accordingly*/
 		block->coded_data[4*i+2] = block->decoded_data[3*i]>>2 | 0x40;
 		block->coded_data[4*i+3] = (block->decoded_data[3*i]&0x03)<<4 | block->decoded_data[3*i+1]>>4 | 0x40;
 		block->coded_data[4*i+4] = (block->decoded_data[3*i+1]&0x0F)<<2 | block->decoded_data[3*i+2]>>6 | 0x40;
@@ -34,7 +31,6 @@ void codeData10Hz(block_10Hz *block){
 	block->coded_data[18]=0x03;
 }
 
-/*Assign Data from Block Struct to decoded_data Array*/
 void setDecodedData10Hz(block_10Hz *block){
 	block->headerIndex=0x0A;
 	block->decoded_data[0] = block->t_h2o;
