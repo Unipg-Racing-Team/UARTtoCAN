@@ -47,6 +47,4 @@ void MX_CAN1_Init(void);
 #ifdef __cplusplus
 }
 #endif
-
 #endif /* __CAN_H__ */
-
