@@ -64,6 +64,7 @@ void Error_Handler(void);
 #define GPS_RX_GPIO_Port GPIOB
 #define led_Pin GPIO_PIN_12
 #define led_GPIO_Port GPIOD
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
@@ -73,5 +74,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
