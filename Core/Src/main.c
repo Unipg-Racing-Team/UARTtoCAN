@@ -26,10 +26,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "../externalSrc/block_4Hz.c"
-#include "../externalSrc/block_10Hz.c"
-#include "../externalSrc/block_100Hz.c"
-#include "../externalSrc/gps.c"
+#include "../../externalSrc/block_4Hz.c"
+#include "../../externalSrc/block_10Hz.c"
+#include "../../externalSrc/block_100Hz.c"
+#include "../../externalSrc/gps.c"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
