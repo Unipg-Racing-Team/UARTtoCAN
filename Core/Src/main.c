@@ -26,10 +26,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "../externalSrc/block_4Hz.c"
-#include "../externalSrc/block_10Hz.c"
-#include "../externalSrc/block_100Hz.c"
-#include "../externalSrc/gps.c"
+#include "../../externalSrc/block_4Hz.c"
+#include "../../externalSrc/block_10Hz.c"
+#include "../../externalSrc/block_100Hz.c"
+#include "../../externalSrc/gps.c"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -122,7 +122,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
